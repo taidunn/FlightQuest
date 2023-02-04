@@ -50,13 +50,5 @@ global endTravel
 
 travel_info()
 
-# numAdults = pyip.inputInt(prompt="%s how many adults are attending? " %name, default=1, limit=4)
-# numChildren = pyip.inputInt(prompt="{} alright so there are {} adult attending how many children aged 3 and up are attending? ".format(name, numAdults), default=0, limit=4)
-# numInfants = pyip.inputInt(prompt="{} currently I have {} adults and {} children how many infants aged 0-2 are attending? ".format(name,numAdults,numChildren), default=0, limit=4)
-# startTravel = pyip.inputDate(prompt="{} what is your planned departure date for your travel?".format(name))
-# endTravel = pyip.inputDate(prompt="{} what is your planned return date for your travel?".format(name))
-# verify()
-
-
 
 
