@@ -101,6 +101,7 @@ def category():
     #categories.sort(reverse=True)
     #print(categories[0])
 
+    print(categories.get(max(categories)))
     max(categories)
     print(categories)
 
