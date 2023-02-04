@@ -12,7 +12,7 @@ pygame.display.set_caption("UniQuest")
 
 #set background image of game
 black = pygame.Color(0,0,0)
-background = pygame.image.load('background.png').convert() #convert to correct image setting
+background = pygame.image.load('background.png') #convert to correct image setting
 
 #font for user input
 base_font = pygame.font.Font(None,32)
