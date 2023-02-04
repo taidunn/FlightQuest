@@ -49,6 +49,3 @@ global startTravel
 global endTravel
 
 travel_info()
-
-
-
