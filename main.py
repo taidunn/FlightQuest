@@ -99,7 +99,7 @@ def questions():
     #state result of dictionary 
     catResult = (categories.get(max(categories)))
     print(f"You are a/an {catResult}!")
-    print("We will get to you shortly with your reccomended travel location!")
+    
 
     countries = ["Paris, France", "Cancun, Mexico", "Vaadhoo Island, Maldives", "San Jose, Costa Rica","Cape Town, South Africa", "Manaus, Brazil", "SanTorini, Greece", "Giza, Egypt", "Chichen Itza, Mexico", "Palm Beach, Aruba", "Hawaii, America", "Ravanieni, Finland", "Washington DC, America","Bondores Bay, Mexico","Kyoto, Japan", "Ibiza, Spain", "New Orleans, America", "Sydney, Australia"]
     airport = ["CDG", "CUN", "MLE", "SJC", "CPT", "MAO", "JTR", "SPX", "MID", "AUA", "HML", "RVN", "DCA", "TPQ", "ITM", "IBZ", "MSY", "SYD" ]
@@ -112,7 +112,7 @@ def questions():
         descountry = countries[randnum]
         # global desCode
         desCode = airport[randnum]
-        print(f"Your country is {descountry}, and your airport is {desCode}\n\n")
+        print(f"Your country is {descountry}, and your airport is {desCode}.\n\n")
 
     elif catResult == "thrillseeker":
         randnum = random.randint(3,5)
@@ -120,7 +120,7 @@ def questions():
         descountry = countries[randnum]
         # global desCode
         desCode = [randnum]
-        print(f"Your country is {descountry}, and your airport is {desCode}\n\n")
+        print(f"Your country is {descountry}, and your airport is {desCode}.\n\n")
                 
     elif catResult == "explorer":
         randnum = random.randint(6,8)
@@ -128,7 +128,7 @@ def questions():
         descountry = countries[randnum]
         # global desCode
         desCode = airport[randnum]
-        print(f"Your country is {descountry}, and your airport is {desCode}\n\n")
+        print(f"Your country is {descountry}, and your airport is {desCode}.\n\n")
             
     elif catResult == "escapist":
         randnum = random.randint(9,11)
@@ -136,7 +136,7 @@ def questions():
         descountry = countries[randnum]
         # global desCode
         desCode = airport[randnum]
-        print(f"Your country is {descountry}, and your airport is {desCode}\n\n")
+        print(f"Your country is {descountry}, and your airport is {desCode}.\n\n")
             
     elif catResult == "foodie":
         randnum = random.randint(12,14)
@@ -144,7 +144,7 @@ def questions():
         descountry = countries[randnum]
         # global desCode
         desCode = airport[randnum]
-        print(f"Your country is {descountry}, and your airport is {desCode}\n\n")
+        print(f"Your country is {descountry}, and your airport is {desCode}.\n\n")
             
     elif catResult == "social":
         randnum = random.randint(15,17)
@@ -152,7 +152,7 @@ def questions():
         descountry = countries[randnum]
         # global desCode
         desCode = airport[randnum]   
-        print(f"Your country is {descountry}, and your airport is {desCode}\n\n")
+        print(f"Your country is {descountry}, and your airport is {desCode}.\n\n")
 
 def verify():
     print("Pytor is compiling your information please wait.")
