@@ -20,7 +20,7 @@ def questions():
     #Array lists of countries
 
     # Question One 
-    input1 = pyip.inputYesNo("Do you like traveling with others? (Y/N)", limit=4)
+    input1 = pyip.inputYesNo("Do you like traveling with others? (Y/N) ", limit=4)
     
     if input1 == "yes":
         social += 2
@@ -104,6 +104,7 @@ def questions():
     countries = ["Paris, France", "Cancun, Mexico", "Vaadhoo Island, Maldives", "San Jose, Costa Rica","Cape Town, South Africa", "Manaus, Brazil", "SanTorini, Greece", "Giza, Egypt", "Chichen Itza, Mexico", "Palm Beach, Aruba", "Hawaii, America", "Ravanieni, Finland", "Washington DC, America","Bondores Bay, Mexico","Kyoto, Japan", "Ibiza, Spain", "New Orleans, America", "Sydney, Australia"]
     airport = ["CDG", "CUN", "MLE", "SJC", "CPT", "MAO", "JTR", "SPX", "MID", "AUA", "HML", "RVN", "DCA", "TPQ", "ITM", "IBZ", "MSY", "SYD" ]
 
+
     #API stuff
     global desCode
     if catResult == "romantic":
@@ -112,7 +113,7 @@ def questions():
         descountry = countries[randnum]
         # global desCode
         desCode = airport[randnum]
-        print(f"Your country is {descountry}, and your airport is {desCode}\n\n")
+        print(f"Your country is {descountry}, and your airport is {desCode}")
 
     elif catResult == "thrillseeker":
         randnum = random.randint(3,5)
@@ -120,7 +121,7 @@ def questions():
         descountry = countries[randnum]
         # global desCode
         desCode = [randnum]
-        print(f"Your country is {descountry}, and your airport is {desCode}\n\n")
+        print(f"Your country is {descountry}, and your airport is {desCode}")
                 
     elif catResult == "explorer":
         randnum = random.randint(6,8)
@@ -128,7 +129,7 @@ def questions():
         descountry = countries[randnum]
         # global desCode
         desCode = airport[randnum]
-        print(f"Your country is {descountry}, and your airport is {desCode}\n\n")
+        print(f"Your country is {descountry}, and your airport is {desCode}")
             
     elif catResult == "escapist":
         randnum = random.randint(9,11)
@@ -136,7 +137,7 @@ def questions():
         descountry = countries[randnum]
         # global desCode
         desCode = airport[randnum]
-        print(f"Your country is {descountry}, and your airport is {desCode}\n\n")
+        print(f"Your country is {descountry}, and your airport is {desCode}")
             
     elif catResult == "foodie":
         randnum = random.randint(12,14)
@@ -144,7 +145,7 @@ def questions():
         descountry = countries[randnum]
         # global desCode
         desCode = airport[randnum]
-        print(f"Your country is {descountry}, and your airport is {desCode}\n\n")
+        print(f"Your country is {descountry}, and your airport is {desCode}")
             
     elif catResult == "social":
         randnum = random.randint(15,17)
@@ -152,12 +153,12 @@ def questions():
         descountry = countries[randnum]
         # global desCode
         desCode = airport[randnum]   
-        print(f"Your country is {descountry}, and your airport is {desCode}\n\n")
+        print(f"Your country is {descountry}, and your airport is {desCode}")
 
 def verify():
     print("Pytor is compiling your information please wait.")
     print()
-    print("Let's make sure we have this right... \n{} I will need you to verify the information below.\n\n I have {} adult(s) in attendance. \n I have {} children in attendance. \n I have {} infants in attendance. \n Lastly I have your departure date as {} and your return date as {}.".format(name,numAdults,numChildren,numInfants,startTravel,endTravel))
+    print("Let's make sure we have this right... \n{} I will need you to verify the information below.  I have {} adult(s) in attendance. \n I have {} children in attendance. \n I have {} infants in attendance. \n Lastly I have your departure date as {} and your return date as {}.".format(name,numAdults,numChildren,numInfants,startTravel,endTravel))
     
     isCor = pyip.inputYesNo("Is all of this information correct? ", default="yes")
     if (isCor == "no"):
@@ -208,10 +209,10 @@ travel_info()
 API = '63de932205f059ece5d77f5f'
 
 print("Checking for flights between {} and {}".format(codeAirport, desCode))
-print("If there is no response we couldn't find any matches.\n\n")
+print("If there is no response we couldn't find any matches.")
 
 response = requests.get("https://api.flightapi.io/roundtrip/{}/{}/{}/{}/{}/{}/{}/{}/Economy/USD".format(API,codeAirport,desCode,startTravel,endTravel,numAdults,numChildren,numInfants))
-print(response.json())
+flight = response.json()
 totalAmount = (flight['fares'][0]['price']['totalAmountUsd'])
 APIadults = (flight['search']['adultsCount'])
 APIchild = (flight['search']['childrenCount'])
@@ -222,7 +223,8 @@ APItype = (flight['legs'][0]['stopoverCode'])
 totAnC = numAdults + numChildren
 totSouls = numAdults + numChildren + numInfants
 
-print("{} you have a total of {} on this trip. \n {} of them are under the age of two. Two and under fly free! \n Calculating prices please wait...\n".format(name,numChildren,numInfants))
+print("{} you have a total of {} on this trip. \n {} of them are under the age of two. Two and under fly free! \n Calculating prices please wait...".format(name,numChildren,numInfants))
+time.sleep(2)
 
 
 #Total Price From API
@@ -231,6 +233,7 @@ print()
 print(totalAmount)
 print()
 perPerson=(totalAmount/totAnC)
+# print("The price per person is", perPerson)
 
 totAdult = (perPerson * APIadults)
 totChildren = (perPerson * APIchild)
@@ -242,6 +245,5 @@ print("You will be flying on a {} flight and the flight time is {}. This flight 
 print("The total number of people you're scheduling a flight for is {}".format(totSouls))
 
 
-print("\n\n View your flight here:")
+print("  View your flight here:")
 print(flight['fares'][0]['handoffUrl'])
-
