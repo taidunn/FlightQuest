@@ -2,6 +2,8 @@ import pyinputplus as pyip
 import time
 import requests
 import random 
+import colorama
+from colorama import Fore
 
 print("Hello my name is Pyotr I am your virtual travel assistant.")
 
@@ -20,7 +22,7 @@ def questions():
     #Array lists of countries
 
     # Question One 
-    input1 = pyip.inputYesNo("Do you like traveling with others? (Y/N)", limit=4)
+    input1 = pyip.inputYesNo(Fore.YELLOW +"Do you like traveling with others? (Y/N)", limit=4)
     
     if input1 == "yes":
         social += 2
@@ -29,7 +31,7 @@ def questions():
         thrillseeker += 0
         
     #Question Two
-    input1 = pyip.inputYesNo("Are you a foodie? (Y/N) ", limit=4)
+    input1 = pyip.inputYesNo(Fore.YELLOW +"Are you a foodie? (Y/N) ", limit=4)
     
     if input1 == "yes":
         foodie+=2
@@ -40,7 +42,7 @@ def questions():
         escapist+=1
 
     #Question Three
-    input1 = pyip.inputYesNo("Would you like a romantic getaway? (Y/N) ", limit=4)
+    input1 = pyip.inputYesNo(Fore.YELLOW +"Would you like a romantic getaway? (Y/N) ", limit=4)
 
     if input1 == "yes":
         romantic+=2
@@ -49,7 +51,7 @@ def questions():
         social+1
 
     #Question Four
-    input1 = pyip.inputYesNo("Are you a risk taker? (Y/N) ", limit=4)
+    input1 = pyip.inputYesNo(Fore.YELLOW +"Are you a risk taker? (Y/N) ", limit=4)
 
     if input1 == "yes":
         thrillseeker += 2
@@ -57,7 +59,7 @@ def questions():
         explorer += 1
 
     # Question Five
-    input1 = pyip.inputYesNo("Are you a geographic landmarks? (Y/N) ", limit=4)
+    input1 = pyip.inputYesNo(Fore.YELLOW +"Are you interested in geographic landmarks? (Y/N) ", limit=4)
 
     if input1 == "yes":
         explorer += 2
@@ -66,7 +68,7 @@ def questions():
         escapist += 1
 
     # Question Six
-    input1 = pyip.inputYesNo("Would you enjoy minimal social interaction? (Y/N) ", limit=4)
+    input1 = pyip.inputYesNo(Fore.YELLOW +"Would you enjoy minimal social interaction? (Y/N) ", limit=4)
 
     if input1 == "yes":
         escapist += 2
@@ -75,7 +77,7 @@ def questions():
         thrillseeker += 1
 
     # Question Seven
-    input1 = pyip.inputYesNo("Have you ever been abroad? (Y/N) ", limit=4)
+    input1 = pyip.inputYesNo(Fore.YELLOW +"Have you ever been abroad? (Y/N) ", limit=4)
 
     if input1 == "yes":
         explorer += 2
@@ -84,7 +86,7 @@ def questions():
         thrillseeker += 1
 
     # Question Seven
-    input1 = pyip.inputYesNo("Could you live in another country for the rest of your life? (Y/N) ", limit=4)
+    input1 = pyip.inputYesNo(Fore.YELLOW +"Could you live in another country for the rest of your life? (Y/N) ", limit=4)
 
     if input1 == "yes":
         escapist += 2
