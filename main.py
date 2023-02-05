@@ -7,8 +7,8 @@ from colorama import Fore
 
 print("Hello my name is Pyotr I am your virtual travel assistant.")
 
-name = pyip.inputStr(prompt = "What is your name? ", default="User", limit = 4)
-print("Hello", name, ".")
+name = pyip.inputStr(prompt = Fore.YELLOW +"What is your name? ", default=Fore.YELLOW +"User", limit = 4)
+print(Fore.YELLOW +"Hello "+ name +".")
 
 def questions():
     # Categories
@@ -175,7 +175,7 @@ def start_over():
 
 def travel_info():
     global codeAirport
-    codeAirport = pyip.inputStr(prompt="%s What is your 3 letter airport code " %name, default='ATL')
+    codeAirport = pyip.inputStr(prompt="%s what is your 3 letter airport code: " %name, default='ATL')
     print()
     global numAdults
     numAdults = pyip.inputInt(prompt="%s how many adults are attending? " %name, default=1, limit=4)
